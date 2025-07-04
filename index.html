@@ -1,257 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Tismo</title>
-        <meta name="Description" content="">
-        <meta property="og:title" content="Tismo" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:description" content="" />
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        
-        <div class="left_side">
-            <a href="" id="logo_left">
-                <img src="images/toofacile_logo.png" alt="" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prox Labs</title>
+    
+    <!-- Google Font for Sci-Fi look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Basic Setup --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #080a10; /* Dark space blue/black */
+            color: #e0e0e0;
+            font-family: 'Orbitron', sans-serif; /* A great sci-fi font */
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        /* --- Centering Container --- */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* --- Animated Sci-Fi Text --- */
+        #sci-fi-text {
+            font-size: 5.5rem; /* Large font size */
+            font-weight: 700;
+            color: #00f6ff; /* Bright cyan */
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            /* The "glow" effect using layered text shadows */
+            text-shadow: 
+                0 0 5px #00f6ff,
+                0 0 10px #00f6ff,
+                0 0 20px #00f6ff,
+                0 0 40px #00a5ad,
+                0 0 80px #00a5ad;
+        }
+
+        /* --- Blinking Cursor --- */
+        .cursor {
+            display: inline-block;
+            color: #00f6ff;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* --- Button Container --- */
+        .button-container {
+            display: flex;
+            gap: 20px; /* Adds space between the buttons */
+            flex-wrap: wrap; /* Allows buttons to stack on very small screens */
+            justify-content: center;
+        }
+
+        /* --- Sci-Fi Button (used for both buttons) --- */
+        .sci-fi-button {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 2px solid #00f6ff;
+            border-radius: 5px;
+            color: #00f6ff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background-color: transparent;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .sci-fi-button:hover {
+            background-color: #00f6ff;
+            color: #080a10; /* The dark background color */
+            box-shadow: 0 0 20px #00f6ff;
+        }
+
+        /* --- Responsive Design for Smaller Screens --- */
+        @media (max-width: 768px) {
+            #sci-fi-text {
+                font-size: 3rem; /* Smaller font on mobile */
+            }
+
+            .sci-fi-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- The animated text will be injected here by JavaScript -->
+        <h1 id="sci-fi-text"></h1>
+
+        <div class="button-container">
+            <!-- Play Store Button -->
+            <!-- !!! IMPORTANT: Replace YOUR_DEVELOPER_ID with your actual Play Store ID !!! -->
+            <a href="https://play.google.com/store/apps/developer?id=Prox+Labs" target="_blank" class="sci-fi-button">
+                View on Play Store
             </a>
 
-            <ul class="tasks_menu">
-                <li><a href="">Add a Task</a></li>
-                <li><a href="">Data</a></li>
-                <li><a href="">Statistics</a></li>
-            </ul>
-            <hr />
-            <ul class="other_apps">
-                <li><a href="">Other Apps</a></li>
-                <li><a href="">Pasici</a></li>
-                <li><a href="">Byebye</a></li>
-                <li><a href="">Too'RH</a></li>
-            </ul>
-
-            <ul class="settings">
-                <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-                <li><a href=""><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-            </ul>
-
-        </div>
-        <div class="middle_side">
-            <a href="" id="logo_middle">
-                <img src="images/tismo_logo.png" alt="" />
+            <!-- NEW Contact Us Button -->
+            <a href="mailto:abdurrehmannoor395@gmail.com" class="sci-fi-button">
+                Contact Us
             </a>
-            <a href="" id="export">
-                <img src="images/export.png" alt="" />
-                Export
-            </a>
-            <div class="time">
-                <p>12:00 Pm <span>5- May -2021</span></p>
-            </div>
-
-            <div class="client_menu">
-                <ul>
-                    <li><a href=""><img src="images/add_icon.png" alt="" />Add</a></li>
-                    <li>
-                        <img src="images/icons_03.png" alt="" />
-                        <select id="company">
-                            <option value="hide">Company</option>
-                            <option value="">Value 1</option>
-                            <option value="">Value 2</option>
-                            <option value="">Value 3</option>
-                        </select> 
-                    </li>
-                    <li>
-                        <img src="images/icons_05.png" alt="" />
-                        <select id="department">
-                            <option value="hide">Department</option>
-                            <option value="">Value 1</option>
-                            <option value="">Value 2</option>
-                            <option value="">Value 3</option>
-                        </select> 
-                    </li>
-                    <li>
-                        <img src="images/icons_21.png" alt="" />
-                        <select id="clients">
-                            <option value="hide">Clients *</option>
-                            <option value="">Value 1</option>
-                            <option value="">Value 2</option>
-                            <option value="">Value 3</option>
-                        </select>
-                    </li>
-                    <li>
-                        <img src="images/icons_07.png" alt="" />
-                        <select id="projects">
-                            <option value="hide">Projects *</option>
-                            <option value="">Value 1</option>
-                            <option value="">Value 2</option>
-                            <option value="">Value 3</option>
-                        </select>
-                    </li>
-                    <li>
-                        <img src="images/icons_10.png" alt="" style="width: 16px;" />
-                        <select id="tasks">
-                            <option value="hide">Tasks *</option>
-                            <option value="">Value 1</option>
-                            <option value="">Value 2</option>
-                            <option value="">Value 3</option>
-                        </select>
-                    </li>
-                    <li><a href=""><img src="images/icons_12.png" alt="" />Start Time</a></li>
-                    <li><a href=""><img src="images/icons_18.png" alt="" style="width: 16px;" />End Time</a></li>
-                </ul>
-            </div>
-            <div class="client_content">
-                <hr />
-                <p><span>Comments:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-            </div>
-            <div class="daily_tasks">
-                <ul>
-                    <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>My Daily Tasks</a></li>
-                </ul>
-            </div>
-            <div class="daily_tasks_content">
-                <table>
-                    <tr>
-                        <th>Client</th>
-                        <th>Project</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                        <th>Total</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td>Tismo</td>
-                        <td>Accueli</td>
-                        <td>01:00</td>
-                        <td>15:00</td>
-                        <td>15h</td>
-                        <td><a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a> | <a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                  </table>
-            </div>
         </div>
+    </div>
 
-        
+<script>
+    // --- Configuration ---
+    const textToType = "Prox Labs";
+    const typingSpeed = 150; // Milliseconds per character
+    const elementId = 'sci-fi-text';
+    // -------------------
 
-        <div class="right_side">
-            <div class="user_profile">
-                <img src="images/user.png" alt="" />
-                <div class="user_info">
-                    <h3>Micheal</h3>
-                    <p>GM</p>
-                    <a href="">Change Password</a>
-                </div>
-            </div>
+    let i = 0;
+    const targetElement = document.getElementById(elementId);
+    
+    // Add a blinking cursor to the element
+    targetElement.innerHTML = '<span class="cursor">|</span>';
+    const cursor = targetElement.querySelector('.cursor');
 
-            <div class="right_details">
-                <a href="">Start</a>
-                <a href="">15h</a>
-                <a href="">End</a>
-            </div>
+    function typeWriter() {
+        if (i < textToType.length) {
+            // Insert the new character before the cursor
+            cursor.insertAdjacentText('beforebegin', textToType.charAt(i));
+            i++;
+            setTimeout(typeWriter, typingSpeed);
+        }
+    }
 
-            <div class="start_end">
-                <a href="">Start</a>
-                <a href="">End</a>
-            </div>
+    // Start the animation when the page loads
+    window.addEventListener('load', typeWriter);
+</script>
 
-            <div class="total_hours">
-                <h3>Total Hours Today</h3>
-                <a href="">15h</a>
-
-                <p>Remaining time today: 6h00</p>
-                <div class="progress_bar">
-                    <div class="progress_bar_round" style="width:55%">55%</div>
-                </div>
-            </div>
-            
-            <div class="total_weeks">
-                <h3>Total Weeks</h3>
-                <a href="">68h</a>
-
-                <p>Remaining time this week: 29h57</p>
-                <div class="progress_bar">
-                    <div class="progress_bar_round" style="width:55%">55%</div>
-                </div>
-            </div>
-            
-            <div class="small_logo">
-                <img src="images/toofacile_small_logo.png" alt="" />
-            </div>
-            
-        </div>
-        
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/app.js"></script>
-    </body>
+</body>
 </html>
